@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: 50% 1fr;
 }
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
 .row {
     width: 100%;
     display: flex;
@@ -54,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-title {
     margin-top: 0;
     font-size: 1.8em;
+    line-height: 1.2em;
 }
 .project-sub-title {
   margin-bottom: 0;
@@ -63,9 +70,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 33.3%;
     padding: 0 4px;
   }
-.column-half {
-    flex: 50%;
-    max-width: 50%;
+  .column-half {
+    width: 100%;
+    max-width: 100%;
     padding: 0 4%;
   }
 header {
@@ -107,7 +114,7 @@ header {
 .modal-img:hover {
   opacity: 0.7;
 }
-#artwork {
+.img-contain {
   object-fit: contain;
 }
 
@@ -205,16 +212,20 @@ header {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
     bottom: 20px; /* Place the button at the bottom of the page */
-    right: 46%; /* Place the button 30px from the right */
+    right: 30px; /* Place the button 30px from the right */
     z-index: 999; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background-color: #202020; /* Set a background color */
+    background-color: rgba(0,0,0,0.4); /* Set a background color */
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px 40px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
     font-size: 14px; /* Increase font size */
+  }
+
+  #toTop:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
   }
 
   /* SLIDESHOW */
@@ -288,20 +299,30 @@ header {
 
   /*SLIDESHOW END */
   
-  #toTop:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+
+  footer p {
+    text-align: center;
+    font-size: 14px;
   }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
     .column {
       flex: 50%;
       max-width: 50%;
     }
+    .project {
+      flex-direction: column;
+    }
+    .column-half {
+      padding-top: 20px;
+      flex: 100%;
+      max-width: 100%;
+    }
   }
   
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .column {
       flex: 100%;
       max-width: 100%;
