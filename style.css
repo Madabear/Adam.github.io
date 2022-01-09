@@ -100,6 +100,12 @@ header {
   color: #414141;
 }
 
+.img-caption {
+  color: #aaa9a9;
+  text-align: center;
+  font-style: italic;
+}
+
 /* Modal Styling */
 
 .modal-img {
